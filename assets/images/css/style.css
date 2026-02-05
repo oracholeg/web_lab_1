@@ -1,0 +1,143 @@
+/* Общие настройки */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 0 1rem;
+}
+
+/* Ссылка "Пропустить контент" */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #007acc;
+    color: #fff;
+    padding: 0.5rem;
+    z-index: 100;
+    text-decoration: none;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* Шапка сайта */
+.site-header {
+    background-color: #007acc;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.site-header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.site-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.site-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+    text-decoration: underline;
+}
+
+/* Основной контент */
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.hero-article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.hero-article p {
+    margin-top: 0.5rem;
+}
+
+/* Секции */
+section {
+    margin-top: 2rem;
+}
+
+section h3 {
+    margin-bottom: 1rem;
+    color: #007acc;
+}
+
+/* Список преимуществ */
+.advantages {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+/* Таблица услуг */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background-color: #007acc;
+    color: #fff;
+}
+
+/* Сайдбар */
+.sidebar {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #e7f0fa;
+    border-radius: 8px;
+}
+
+/* Ссылки в сайдбаре */
+.sidebar a {
+    color: #007acc;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+/* Футер */
+.site-footer {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 1rem;
+    background-color: #007acc;
+    color: #fff;
+    border-radius: 0 0 8px 8px;
+}
