@@ -15,7 +15,7 @@ body {
 /* ===================================
    HEADER І НАВІГАЦІЯ
    =================================== */
-.site-header {
+.header {
     background: #6366f1;
     color: #ffffff;
     padding: 2rem 1rem;
@@ -31,7 +31,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.site-nav ul {
+.navigation ul {
     list-style: none;
     display: flex;
     justify-content: center;
@@ -39,7 +39,7 @@ body {
     padding-left: 0;
 }
 
-.site-nav a {
+.navigation a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
@@ -48,11 +48,11 @@ body {
     transition: 0.3s;
 }
 
-.site-nav a:hover {
+.navigation a:hover {
     background: #4f46e5;
 }
 
-.site-nav a[aria-current="page"] {
+.navigation a[aria-current="page"] {
     background: #ffffff;
     color: #6366f1;
 }
@@ -208,7 +208,7 @@ body {
    АДАПТИВНІСТЬ
    =================================== */
 @media (max-width: 768px) {
-    .site-nav ul {
+    .navigation ul {
         flex-direction: column;
         gap: 0.5rem;
     }
