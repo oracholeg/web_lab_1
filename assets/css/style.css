@@ -1,143 +1,219 @@
-/* Общие настройки */
-* {
-    box-sizing: border-box;
+/* ===================================
+   БАЗОВА КОЛЬОРОВА ПАЛІТРА І ВІДСТУПИ
+   =================================== */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background: #f9fafb;
+    color: #1f2937;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
 }
 
-body {
-    line-height: 1.6;
-    background-color: #f4f4f9;
-    color: #333;
-    padding: 0 1rem;
-}
-
-/* Ссылка "Пропустить контент" */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #007acc;
-    color: #fff;
-    padding: 0.5rem;
-    z-index: 100;
-    text-decoration: none;
-}
-.skip-link:focus {
+/* ===================================
+   HEADER І НАВІГАЦІЯ
+   =================================== */
+.header {
+    background: #6366f1;
+    color: #ffffff;
+    padding: 2rem 1rem;
+    text-align: center;
+    position: sticky;
     top: 0;
+    z-index: 50;
 }
 
-/* Шапка сайта */
-.site-header {
-    background-color: #007acc;
-    color: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#site-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
 }
 
-.site-header h1 {
-    margin-bottom: 0.5rem;
-}
-
-.site-nav ul {
+.navigation ul {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    justify-content: center;
+    gap: 0.75rem;
+    padding-left: 0;
 }
 
-.site-nav a {
-    color: #fff;
+.navigation a {
+    color: #ffffff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: 0.3s;
 }
 
-.site-nav a:hover,
-.site-nav a[aria-current="page"] {
-    text-decoration: underline;
+.navigation a:hover {
+    background: #4f46e5;
 }
 
-/* Основной контент */
-main {
+.navigation a[aria-current="page"] {
+    background: #ffffff;
+    color: #6366f1;
+}
+
+/* ===================================
+   ГОЛОВНИЙ КОНТЕНТ
+   =================================== */
+#main {
     max-width: 1000px;
-    margin: 2rem auto;
+    margin: 3rem auto;
     padding: 1rem;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.hero-article img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-top: 1rem;
+.about-intro h2,
+.skills h3,
+.history h3,
+.contacts-block h3 {
+    color: #6366f1;
+    margin-bottom: 0.75rem;
 }
 
-.hero-article p {
-    margin-top: 0.5rem;
-}
-
-/* Секции */
-section {
-    margin-top: 2rem;
-}
-
-section h3 {
+.skills ul,
+.history dl,
+.contacts-block address {
+    margin-left: 1rem;
     margin-bottom: 1rem;
-    color: #007acc;
 }
 
-/* Список преимуществ */
-.advantages {
-    list-style-type: disc;
-    padding-left: 1.5rem;
+.skills li,
+.history dd,
+.contacts-block p {
+    margin-bottom: 0.5rem;
+    color: #6b7280;
 }
 
-/* Таблица услуг */
-table {
+/* ===================================
+   CONTACT FORM
+   =================================== */
+.contact-form {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px rgba(0,0,0,0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.contact-form label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.contact-form input,
+.contact-form textarea {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 0.75rem;
-    text-align: left;
-}
-
-th {
-    background-color: #007acc;
-    color: #fff;
-}
-
-/* Сайдбар */
-.sidebar {
-    margin-top: 2rem;
     padding: 1rem;
-    background-color: #e7f0fa;
-    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 1rem;
 }
 
-/* Ссылки в сайдбаре */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #6366f1;
+    outline: none;
+    box-shadow: 0 0 5px rgba(99,102,241,0.3);
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 1rem;
+    font-weight: 700;
+    background: #6366f1;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #4f46e5;
+}
+
+/* ===================================
+   SIDEBAR
+   =================================== */
+.sidebar {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 1.5rem;
+    background: #f3f4f6;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.sidebar h3 {
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.sidebar li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #6366f1;
+    font-weight: 700;
+}
+
 .sidebar a {
-    color: #007acc;
+    color: #6366f1;
     text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
 .sidebar a:hover {
+    color: #4f46e5;
     text-decoration: underline;
+    transform: translateX(4px);
+    display: inline-block;
 }
 
-/* Футер */
+/* ===================================
+   FOOTER
+   =================================== */
 .site-footer {
-    margin-top: 3rem;
     text-align: center;
-    padding: 1rem;
-    background-color: #007acc;
-    color: #fff;
-    border-radius: 0 0 8px 8px;
+    padding: 2rem;
+    background: #6366f1;
+    color: #ffffff;
+    margin-top: 4rem;
+}
+
+/* ===================================
+   АДАПТИВНІСТЬ
+   =================================== */
+@media (max-width: 768px) {
+    .navigation ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    #site-title {
+        font-size: 1.5rem;
+    }
 }
