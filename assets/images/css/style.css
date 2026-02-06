@@ -120,10 +120,6 @@ body {
     flex-wrap: wrap;
 }
 
-.navigation__item {
-    /* Стилі для елементів списку за потреби */
-}
-
 .navigation__link {
     color: var(--c-surface);
     text-decoration: none;
@@ -231,21 +227,36 @@ body {
    =================================== */
 .about-article {
     margin-bottom: var(--space-6);
+    padding: var(--space-6);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(236, 72, 153, 0.08) 100%);
+    border-radius: var(--radius-2);
+    border: 2px solid rgba(99, 102, 241, 0.15);
+    transition: all 0.3s ease;
+}
+
+.about-article:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--c-primary-light);
 }
 
 .about-article__header {
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-4);
 }
 
 .about-article__title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: var(--c-primary);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-3);
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 .about-article__text {
     margin-bottom: var(--space-3);
-    line-height: 1.7;
+    line-height: 1.8;
+    font-size: 1.0625rem;
+    color: var(--c-text-light);
 }
 
 /* ===================================
@@ -276,22 +287,67 @@ body {
    SECTION (Загальні секції)
    =================================== */
 .section {
-    margin-top: var(--space-6);
+    margin-top: var(--space-8);
+    padding: var(--space-6);
+    background: linear-gradient(to bottom right, rgba(99, 102, 241, 0.05) 0%, transparent 100%);
+    border-radius: var(--radius-2);
 }
 
 .section__title {
-    font-size: 1.25rem;
-    margin-bottom: var(--space-3);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-5);
     color: var(--c-primary);
+    font-weight: 700;
+    position: relative;
+    padding-bottom: var(--space-3);
+}
+
+.section__title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
 }
 
 .section__list {
-    list-style-type: disc;
-    padding-left: var(--space-5);
+    list-style: none;
+    padding-left: 0;
 }
 
 .section__item {
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-6);
+    position: relative;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--c-text-light);
+    transition: all 0.3s ease;
+}
+
+.section__item::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--gradient-success);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.section__item:hover {
+    transform: translateX(8px);
+    color: var(--c-text);
 }
 
 /* ===================================
@@ -302,26 +358,39 @@ body {
 }
 
 .services__title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     margin-bottom: var(--space-5);
     color: var(--c-text);
     font-weight: 700;
+    position: relative;
+    padding-bottom: var(--space-3);
+}
+
+.services__title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
 }
 
 .services__table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    margin-top: var(--space-4);
+    margin-top: var(--space-5);
     border-radius: var(--radius-2);
     overflow: hidden;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
 }
 
 .services__header {
     background: var(--gradient-primary);
     color: var(--c-surface);
-    padding: var(--space-4);
+    padding: var(--space-5);
     text-align: left;
     font-weight: 700;
     text-transform: uppercase;
@@ -330,43 +399,103 @@ body {
 }
 
 .services__cell {
-    border: 1px solid var(--c-border);
-    padding: var(--space-4);
+    border-bottom: 1px solid var(--c-border);
+    padding: var(--space-5);
     background: var(--c-surface);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.services__table tbody tr:last-child .services__cell {
+    border-bottom: none;
+}
+
+.services__table tbody tr {
     transition: all 0.3s ease;
 }
 
-.services__table tbody tr:hover .services__cell {
-    background: linear-gradient(to right, rgba(99, 102, 241, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+.services__table tbody tr:hover {
     transform: scale(1.01);
+}
+
+.services__table tbody tr:hover .services__cell {
+    background: linear-gradient(to right, rgba(99, 102, 241, 0.08) 0%, rgba(255, 255, 255, 1) 100%);
 }
 
 /* ===================================
    HISTORY (Історія)
    =================================== */
 .history {
-    margin-top: var(--space-6);
+    margin-top: var(--space-8);
+    padding: var(--space-6);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(99, 102, 241, 0.05) 100%);
+    border-radius: var(--radius-2);
 }
 
 .history__title {
-    font-size: 1.25rem;
-    margin-bottom: var(--space-3);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-5);
     color: var(--c-primary);
+    font-weight: 700;
+    position: relative;
+    padding-bottom: var(--space-3);
+}
+
+.history__title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-success);
+    border-radius: var(--radius-full);
 }
 
 .history__list {
-    margin-left: var(--space-4);
+    margin-left: 0;
+    padding-left: var(--space-6);
+    position: relative;
+}
+
+.history__list::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--c-primary), var(--c-success));
 }
 
 .history__term {
-    font-weight: bold;
-    margin-top: var(--space-3);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-top: var(--space-5);
+    margin-bottom: var(--space-2);
     color: var(--c-primary);
+    position: relative;
+}
+
+.history__term::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background: var(--c-primary);
+    border-radius: 50%;
+    border: 3px solid var(--c-surface);
+    box-shadow: 0 0 0 2px var(--c-primary);
 }
 
 .history__description {
-    margin-left: var(--space-5);
-    margin-bottom: var(--space-2);
+    margin-left: 0;
+    margin-bottom: var(--space-3);
+    color: var(--c-text-light);
+    line-height: 1.7;
+    font-size: 1.0625rem;
 }
 
 /* ===================================
@@ -384,7 +513,7 @@ body {
 }
 
 .contact-form__title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     margin-bottom: var(--space-6);
     color: var(--c-text);
     font-weight: 700;
@@ -475,9 +604,22 @@ body {
 
 .contacts__title {
     font-size: 1.5rem;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-5);
     color: var(--c-text);
     font-weight: 700;
+    position: relative;
+    padding-bottom: var(--space-3);
+}
+
+.contacts__title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-accent);
+    border-radius: var(--radius-full);
 }
 
 .contacts__address {
@@ -488,6 +630,22 @@ body {
     margin-bottom: var(--space-3);
     font-size: 1.0625rem;
     color: var(--c-text-light);
+    padding-left: var(--space-6);
+    position: relative;
+}
+
+.contacts__item::before {
+    content: '📧';
+    position: absolute;
+    left: 0;
+}
+
+.contacts__item:nth-child(2)::before {
+    content: '📱';
+}
+
+.contacts__item:nth-child(3)::before {
+    content: '📍';
 }
 
 .contacts__link {
@@ -513,21 +671,32 @@ body {
     border-radius: var(--radius-3);
     border: 2px solid rgba(99, 102, 241, 0.1);
     box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
 }
 
-.sidebar--links {
-    /* Модифікатор для сайдбару з посиланнями */
-}
-
-.sidebar--values {
-    /* Модифікатор для сайдбару з цінностями */
+.sidebar:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--c-primary-light);
 }
 
 .sidebar__title {
-    font-size: 1.25rem;
-    margin-bottom: var(--space-4);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-5);
     color: var(--c-text);
     font-weight: 700;
+    position: relative;
+    padding-bottom: var(--space-3);
+}
+
+.sidebar__title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
 }
 
 .sidebar__list {
@@ -536,9 +705,10 @@ body {
 }
 
 .sidebar__item {
-    margin-bottom: var(--space-3);
-    padding-left: var(--space-5);
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-6);
     position: relative;
+    transition: all 0.3s ease;
 }
 
 .sidebar__item::before {
@@ -547,6 +717,12 @@ body {
     left: 0;
     color: var(--c-primary);
     font-weight: 700;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.sidebar__item:hover::before {
+    transform: translateX(4px);
 }
 
 .sidebar__link {
@@ -554,13 +730,12 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
+    font-size: 1.0625rem;
 }
 
 .sidebar__link:hover {
     color: var(--c-primary-dark);
     text-decoration: underline;
-    transform: translateX(4px);
-    display: inline-block;
 }
 
 /* ===================================
@@ -579,8 +754,9 @@ body {
 
 .footer__text {
     margin: 0;
-    font-size: 0.9375rem;
+    font-size: 1rem;
     opacity: 0.95;
+    font-weight: 500;
 }
 
 /* ===================================
@@ -593,14 +769,50 @@ body {
     }
     
     .main {
-        padding: var(--space-4);
+        padding: var(--space-5);
+        margin: var(--space-5) var(--space-3);
     }
     
     .header {
-        padding: var(--space-3);
+        padding: var(--space-4) var(--space-3);
     }
     
     .header__title {
+        font-size: 1.75rem;
+    }
+    
+    .article__title,
+    .about-article__title {
         font-size: 1.5rem;
+    }
+    
+    .contact-form {
+        padding: var(--space-5);
+    }
+    
+    .sidebar,
+    .footer {
+        margin-left: var(--space-3);
+        margin-right: var(--space-3);
+    }
+}
+
+@media (max-width: 480px) {
+    .header__title {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-4);
+    }
+    
+    .main__title {
+        font-size: 1.5rem;
+    }
+    
+    .services__table {
+        font-size: 0.875rem;
+    }
+    
+    .services__header,
+    .services__cell {
+        padding: var(--space-3);
     }
 }
