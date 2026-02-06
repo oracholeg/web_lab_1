@@ -11,28 +11,27 @@
 <body>
 <a class="skip-link" href="#main">Перейти до основного контенту</a>
 
-<header class="site-header">
-    <h1 id="site-title">Мій перший лендінг</h1>
-    <nav class="site-nav" aria-label="Головна навігація">
-        <ul>
-            <li><a href="index.html" aria-current="page">Головна</a></li>
-            <li><a href="about.html">Про нас</a></li>
-            <li><a href="contacts.html">Контакти</a></li>
+<header class="header">
+    <h1 class="header__title">Мій перший лендінг</h1>
+    <nav class="navigation" aria-label="Головна навігація">
+        <ul class="navigation__list">
+            <li class="navigation__item"><a class="navigation__link" href="index.html" aria-current="page">Головна</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="about.html">Про нас</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="contacts.html">Контакти</a></li>
         </ul>
     </nav>
 </header>
 
+
 <main id="main">
-    <article class="hero-article">
-        <header>
-            <h2>Новини</h2>
-        </header>
-        <p>Ніколаєнко Данило Денисович почав роботу над HTML-каркасом.</p>
-        <figure>
-            <img src="assets/images/placeholder.jpg" alt="Фото студента" width="640"/>
-            <figcaption>Це зображення для новини</figcaption>
-        </figure>
-    </article>
+    <article class="article">
+      <h2 class="article__title">Новини</h2>
+      <p class="article__text">Ніколаєнко Данило Денисович почав роботу над HTML-каркасом.</p>
+      <figure class="media article__media media--framed">
+          <img src="assets/images/placeholder.jpg" alt="Фото студента">
+          <figcaption class="media__caption">Це зображення для новини</figcaption>
+      </figure>
+  </article>
 
     <section aria-labelledby="benefits-title" class="benefits">
         <h3 id="benefits-title">Наші переваги</h3>
@@ -74,7 +73,7 @@
     </section>
 </main>
 
-<aside class="sidebar" aria-label="Додаткова інформація">
+<aside class="sidebar sidebar--links" aria-label="Додаткова інформація">
     <h3>Корисні посилання</h3>
     <ul>
         <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
